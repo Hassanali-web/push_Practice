@@ -1,0 +1,30 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Full E-commerce Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .product { border: 1px solid #ddd; padding: 10px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Full E-commerce Demo</h1>
+  <div id="products"></div>
+  <script>
+    async function load() {
+      const r = await fetch('/api/products');
+      const list = await r.json();
+      const c = document.getElementById('products');
+      list.forEach(p => {
+        const d = document.createElement('div');
+        d.className='product';
+        d.innerHTML = '<strong>' + p.name + '</strong> - $' + p.price.toFixed(2);
+        c.appendChild(d);
+      });
+    }
+    load();
+  </script>
+</body>
+</html>

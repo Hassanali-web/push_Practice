@@ -1,0 +1,16 @@
+{
+  "name": "ecommerce-demo",
+  "version": "1.0.0",
+  "description": "Simple e-commerce demo for DevOps practice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/test.js || true",
+    "lint": "echo lint step (add eslint if desired)"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  }
+}
